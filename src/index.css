@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-brand-primary: #1e3a8a; /* Blue 900 for Geometric Balance primary */
+  --color-brand-navy: #0f172a;
+  --color-brand-blue: #1e3a8a;
+  --color-brand-steel: #475569;
+  --color-brand-ice: #f1f5f9;
+  --color-brand-accent: #2563eb;
+  --color-compliance-gold: #d97706;
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-slate-100 text-slate-900 leading-relaxed antialiased;
+  }
+
+  /* Force "Geometric Balance" blocky look globally on rounding elements */
+  .rounded-3xl, .rounded-2xl, .rounded-xl, .rounded-lg, .rounded-md {
+    border-radius: 2px !important;
+  }
+}
+
+/* Custom glossy panel style translated to sharp geometric windows */
+.glass-panel {
+  background: #ffffff;
+  border: 2px solid #cbd5e1;
+  box-shadow: 4px 4px 0px 0px rgba(15, 23, 42, 0.1);
+}
+
+.dark-glass-panel {
+  background: #0f172a;
+  border: 2px solid #334155;
+  box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 0.25);
+}
+
+/* Custom solid geometric borders for widgets */
+.geometric-box {
+  @apply bg-white border-2 border-slate-300 p-6 shadow-sm;
+  box-shadow: 4px 4px 0px 0px rgba(15, 23, 42, 0.08);
+}
+
+.geometric-box-dark {
+  @apply bg-slate-900 border-2 border-slate-700 p-6 text-white;
+  box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 0.15);
+}
+
+/* Custom grid patterns */
+.grid-pattern {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(148, 163, 184, 0.12) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.12) 1px, transparent 1px);
+}
+
+.grid-blueprint {
+  background-size: 20px 20px;
+  background-image: 
+    linear-gradient(to right, rgba(30, 58, 138, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(30, 58, 138, 0.1) 1px, transparent 1px);
+}
+
