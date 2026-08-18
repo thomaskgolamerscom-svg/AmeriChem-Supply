@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter", ui-sans-serif, sans-serif;
+  --font-sans: "Poppins", "Inter", ui-sans-serif, sans-serif;
+  --font-nav: "Poppins", "Inter", sans-serif;
   --font-display: "Space Grotesk", sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 
@@ -63,5 +64,73 @@
   background-image: 
     linear-gradient(to right, rgba(30, 58, 138, 0.1) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(30, 58, 138, 0.1) 1px, transparent 1px);
+}
+
+/* 360-Degree Spinning Logo Keyframes Animation */
+@keyframes spinLogo {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-logo-spin {
+  animation: spinLogo 0.75s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  transform-origin: center center;
+}
+
+/* Smooth Fade-in Transition for Dynamic Single-View Switching */
+@keyframes fadeInView {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInView {
+  animation: fadeInView 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Pulse shimmer loading state */
+@keyframes shimmerWave {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.loading-shimmer {
+  background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%);
+  background-size: 200% 100%;
+  animation: shimmerWave 1.5s infinite;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+  
+  .mobile-stack {
+    display: flex;
+    flex-direction: column !important;
+  }
+
+  .mobile-touch-target {
+    min-height: 44px;
+  }
+
+  .geometric-box, .geometric-box-dark {
+    padding: 1rem !important;
+    box-shadow: 2px 2px 0px 0px rgba(15, 23, 42, 0.08) !important;
+  }
 }
 
